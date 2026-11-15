@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>USB Remote</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="top">
+      <div class="mark" aria-hidden="true">USB</div>
+      <div>
+        <p class="eyebrow">CHROMEBOOK → UBUNTU</p>
+        <h1>USB Remote</h1>
+        <p class="sub">USB機器の認識・共有準備ツール</p>
+      </div>
+    </header>
+
+    <section class="panel intro">
+      <div class="status-line"><span id="browser-status" class="dot"></span><span id="browser-status-text">ブラウザ機能を確認しています…</span></div>
+      <p>このページからChromebookに接続されたUSB機器を選択し、Chromeが認識できるか確認できます。</p>
+      <p class="notice">現在は機器の選択・情報表示までです。Ubuntuへのデータ転送はまだ実装していません。</p>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div><p class="eyebrow">DEVICE MANAGER</p><h2>USB機器</h2></div>
+        <button id="refresh-button" class="secondary" type="button">再読み込み</button>
+      </div>
+      <p class="hint">一度このサイトにアクセスを許可した機器が一覧に表示されます。</p>
+      <div id="device-list" class="device-list" aria-live="polite">
+        <div class="empty">対応状況を確認しています…</div>
+      </div>
+      <button id="choose-button" class="primary" type="button">＋ USB機器を選択</button>
+      <p id="message" class="message" role="status"></p>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">NEXT STEP</p>
+      <h2>次の実装</h2>
+      <ol class="steps">
+        <li class="done">ChromeからUSB機器を選択する</li>
+        <li>Ubuntu側の受信エージェントと安全に接続する</li>
+        <li>対応するUSB機器を個別に共有・解除する</li>
+      </ol>
+    </section>
+    <footer>USB Remote · 初期開発版</footer>
+  </main>
+</body>
+</html>
